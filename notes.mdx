@@ -105,4 +105,23 @@ function sum_char_codes(n: string): number {
 
 #### Arrays Data Structure
 
+- Arrays are contiguous blocks of memory. This means that the elements are stored one after the other in memory.
+
+```javascript
+const a = new ArrayBuffer(6);
+const a8 = new Uint8Array(a);
+a8[0] = 45;
+console.log(a); // ArrayBuffer { [Uint8Content: <2d 00 00 00 00 00>, byteLength: 6 }
+
+a8[2] = 45;
+console.log(a); // ArrayBuffer { [Uint8Content: <2d 00 2d 00 00 00>, byteLength: 6 }
+
+const a16 = new Uint16Array(a);
+console.log(a16); // ArrayBuffer { [Uint8Content: <2d 00 2d 00 00 00>, byteLength: 6 }
+
+const a16[2] = 0x4545;
+
+console.log(a); // ArrayBuffer { [Uint8Content: <2d 00 2d 00 45 45>, byteLength: 6 }
+```
+
 #### Arrays Q&A
