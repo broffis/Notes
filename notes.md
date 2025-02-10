@@ -125,3 +125,7 @@ console.log(a); // ArrayBuffer { [Uint8Content: <2d 00 2d 00 45 45>, byteLength:
 ```
 
 #### Arrays Q&A
+
+n/a
+
+#### Learning Lab Discussion
