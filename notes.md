@@ -129,3 +129,20 @@ console.log(a); // ArrayBuffer { [Uint8Content: <2d 00 2d 00 45 45>, byteLength:
 n/a
 
 #### Learning Lab Discussion
+
+# 2-20-2025
+
+## The Last Algorithms Course You'll Need
+
+### Search
+
+#### Linear Search and Kata Setup
+
+Algorithms
+The A in DSA
+
+Clone Kata repo and did LinearSearchList
+
+#### Binary Search Algorithm
+
+Another Big O trick - If the input halves at each step, its likely O(LogN) or O(NlogN)
