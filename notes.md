@@ -146,3 +146,37 @@ Clone Kata repo and did LinearSearchList
 #### Binary Search Algorithm
 
 Another Big O trick - If the input halves at each step, its likely O(LogN) or O(NlogN)
+
+# 2-20-2025
+
+## The Last Algorithms Course You'll Need
+
+### Search
+
+#### Pseudo Code Binary Search
+
+search(arr, lo, hi, needle)
+
+midpoint = floor(lo + (hi-lo)/2)
+
+val = arr[midpoint]
+
+if (val = needle) return true
+else if (v > midpoint) lo = midpoint + 1
+else hi = midpoint
+
+- Low is always inclusive, High is always exclusive
+  - This is why we always add one to Low, but just set for High
+- For any of this to work, the array **MUST BE SORTED**
+
+#### Implementing Binary Search
+
+#### Two Crystal Balls Problem
+
+Problem:
+Given two crystal balls that will break if dropped from high enough distance, determine the exact spot in which it will break in the most optimized way
+
+Solution:
+Jump √N until one breaks, then walk forward from last known non-break in linear fashion. Now it's O(√N)
+
+#### Implementing Two Crystal Balls Problem
