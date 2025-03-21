@@ -180,3 +180,50 @@ Solution:
 Jump √N until one breaks, then walk forward from last known non-break in linear fashion. Now it's O(√N)
 
 #### Implementing Two Crystal Balls Problem
+
+# 3-7-2025
+
+## The Last Algorithms Course You'll Need
+
+### Sort
+
+#### Bubble Sort
+
+- Each iteration of a bubble sort returns the highest value in the last position
+  - Next iteration does not include final last iteration length
+- Running time is (n(n+1))/2 => O(n^2)
+  - drop constant => (n^2 + n)
+  - drop insignificant value (+n) => n^2
+
+#### Implement Bubble Sort
+
+#### Linked List Data Structures
+
+- Node based data structure
+  - There is no index, you use .next() to move through
+- Insertion is O(I)
+  - speed is not dependent on value or size inserted
+  - setting .next() and .prev() references happen constantly and at the same time
+- Deletion is harder O(4I) => O(I)
+  - speed is not dependent on value or size removed
+  - setting .next() and .prev() happen constantly and at the same time
+
+#### Linked List Complexity
+
+#### Queue
+
+- Specific implementation of a LinkedList
+  - FIFO structure
+- Speed is 2O(I)
+  - Adding/removing from a queue requires 2 operations
+
+#### Implementing a Queue
+
+#### Stack
+
+- Backwards queue
+  - Think of it like a bunch of things stacked up
+  - "Stack" Trace for errors
+  - Last In, First Out
+
+#### Implementing a Stack
