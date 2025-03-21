@@ -180,3 +180,48 @@ Solution:
 Jump √N until one breaks, then walk forward from last known non-break in linear fashion. Now it's O(√N)
 
 #### Implementing Two Crystal Balls Problem
+
+# 3-21-2025
+
+## The Last Algorithms Course You'll Need
+
+### Arrays
+
+#### Arrays vs Linked List
+
+- Working with Arrays is always O(1)
+
+##### Memory
+
+- Arrays require memory allocation up front
+  - If you _might_ need 1000 items, you have to create it with 1000 empty spots
+- Linked Lists allow for less memory use
+
+##### Search
+
+- Linked lists MUST be done in linear fashion (1 by 1)
+  - Arrays allow index search
+
+#### ArrayList
+
+- Allows for dynamic growth if you exceed capacity
+  - Maintains length(L) and capacity(C)
+    - If L > C, new array created, prev values copied in, L & C updated
+- Enque and Deque are O(N) b/c you have to shift every item in the array over before adding or after removing
+  - ArrayLists are really bad with these operations. You'll likely want LinkedList for this
+
+#### RingBuffer
+
+- Similar storage to Array, but head and tail are index based
+  - You (can) maintain empty space on either side of the head/tail values to make adding/subtracting easier
+- If you overflow the end, you can modulo(%) operator to shift the head/tail to the opposite side
+
+#### Data Structures Q&A
+
+(Check out `array-test.ts` in kata-machine)
+
+- What is used when we do const a = []?
+  - It's an ArrayList
+    - Get: O(1)
+    - Push/Pop: O(1)
+    - Un/Shift: O(n)
