@@ -227,3 +227,26 @@ Jump √N until one breaks, then walk forward from last known non-break in linea
   - Last In, First Out
 
 #### Implementing a Stack
+
+# 5-1-2025
+
+## The Last Algoritms Course You'll Ever Need
+
+### Recursion
+
+#### Recursion
+
+- What is recursion: A function that calls itself
+  - eventually reaches "base case" that no longer needs to call itself
+- Three steps in recursion:
+  1. pre
+  2. recurse
+  3. post
+
+#### Path Finding: Base Case
+
+#### Q&A
+
+- complexity is O(n)
+  - each square gets at best 4 checks
+  - O(4n) => drop the 4
