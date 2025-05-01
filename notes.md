@@ -242,3 +242,5 @@ Jump √N until one breaks, then walk forward from last known non-break in linea
   1. pre
   2. recurse
   3. post
+
+#### Path Finding: Base Case
