@@ -60,6 +60,9 @@ function walk(
     }
 
     // Post
+    // This removes the current point from the path
+    // if we didn't find the end
+    // This is a backtrack
     path.pop();
 
     return false;

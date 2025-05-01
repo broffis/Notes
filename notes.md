@@ -244,3 +244,9 @@ Jump √N until one breaks, then walk forward from last known non-break in linea
   3. post
 
 #### Path Finding: Base Case
+
+#### Q&A
+
+- complexity is O(n)
+  - each square gets at best 4 checks
+  - O(4n) => drop the 4
