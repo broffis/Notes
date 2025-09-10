@@ -467,4 +467,223 @@ User diagnostic data
   - Helpful for finding out why someone might be struggling with requests/navigation
 - Take a url from an end user and generate the diagnostic link
 
+Edge to Origin
+
+- Make requests to your origin via the platform
+
 ### Key Takeaways
+
+- There are APIs available for all of this
+
+## Module 8: Advanced Caching
+
+### Advanced Caching - Review
+
+Cache Key
+
+- Prevents cache proliferation or pollution
+- Necessary for purghing
+
+### Purging Contnet from Edge Cache - Recap
+
+Tools
+
+- Fast Purge
+- {OPEN} APIs
+- Control center UI
+
+### Advanced Caching - What does it mean?
+
+Cache by device type
+
+### Cache Key Modification - cid (Cache ID)
+
+### Implementation
+
+Device Characterization - Define Cached Content
+
+### Cache Key Modification - Source
+
+Modify cache key based in data from incoming request
+
+- Network, URL, HTTP Method/Protocol, HTTP Headers
+
+### Additional Use Cases
+
+Cache generic page, bypass page for users with session
+Cache different versions of page for different locations
+Caching APIs
+Cache based on User-Defined Variable
+
+### Cache Generic and Bypass Cache for Session
+
+Serve generic (no session/no-login) users from cache
+Bypass cache for users with session cookie
+No cache key modification required
+
+### Different Locations
+
+Include info derived from IP Addresses of clients, networks, routers to identify user geo location. Cache accordingly
+e.g.: Cache differently for a user from California vs Canada
+
+### API Caching
+
+### Query Strings Parameters and Caching
+
+Can use things like product ID in the cache key
+Purging
+
+- Fast Purge
+  - Need to know _all_ the cache keys
+- Purge with ECCU
+  - Slow, but allows for wildcards
+
+### Controlling Edge Cache from Origin
+
+- Honor Cache-Control -> caching
+- Edge-control Headers -> caching override
+- Cache Tags from Origin -> additional purging capabilities
+
+Edge-Control Headers
+
+- Honored by Edge regardless of caching configuration
+- Override other TTLs/Caching configuration settings
+- Edge-Control headers have same spec as Cache-Control
+
+### Cache Tagging
+
+`Edge-Cache-Tag`
+Done at origin
+Done at Edge -> using Modify Incoming Response Header
+Supports multiple tags
+Support from Fast Purge
+
+Example:
+
+- Edge-Content-Tag: jackets, blue
+- Edge-Content-Tag: blouse, red
+
+### Key Takeaways
+
+- Cache ID modification takes cache control options for setting the key beyond path, filename, and query params
+- Override with edge-control headers
+- Use CID for purging
+
+## Module 9: Image and Video Optimization
+
+Challenges with delivering images and videos on site
+
+### Challenges of Images Online
+
+- Demand for image rich experiences
+- Different devices and browsers
+- Over-downloading: downloading images of excess resolution and quality
+
+### Challenges - Image rich experiences
+
+Bytes delivered by web-page since Jan '11 has roughly quadrupled
+
+### Challenges - Different Devices and Browsers
+
+Device types
+
+- Mobile, desktop, tablets, IoT
+
+Browsers
+
+- Safari, Chrome, Edge, Firefox, Opera, etc
+
+Many different screen size and image support requirements
+
+### Challenges - Browser-Optimized Image Formats
+
+Safari - supports JP2
+Chrome - supports WebP
+Edge - JPEG XR
+
+### Challenges - Over-Downloading
+
+Mobile getting the same image as desktop
+
+- Waaaaay too big
+
+### Image & Video Manager - Introduction
+
+- Create a variety of optimized derivative versions
+- Knows about different device/browser types
+
+### Features: Scale for Mobile and Use Best File Type
+
+Scale for Mobile
+
+- Preset image widths based on device size
+- `imwidth` query param
+
+Best File Type
+
+- serve best fit based on browser
+
+### Image and Video Manager - Policies
+
+Policies
+
+- Image Widths
+- Compression Settings
+- Additional transformations (grayscale, overlay, etc)
+
+By Default
+
+- also called the `.auto` policy
+- breakpoints: 5000, 2048, 1024, 640, 320
+- Compression encoding level 90
+- no transformations
+
+### Image and Video Manager - Parameters
+
+`impolicy`: use a policy other than default
+`imwidth`: desired image width
+`imformat`: image format (webp, jpeg, etc)
+
+### Image and Video Manager - Policy Variables
+
+Variables are supported with the manager
+
+### Image and Video Manager - Video
+
+Progressive Download, Origin agnostic, Automated Optimization, Quality
+
+Limited to videos <5 minutes long
+
+### Image and Video Manager - API
+
+Policies
+Images
+Image Collections
+
+### Image and Video Manager Configuration
+
+1. Add the Image and Video Manager rule in Property Manager
+2. Configure your policy (or policies)
+
+### Configuration - Property Manager
+
+You have to cache content -> minimum 1 day, default is 30 days
+
+### Configuration - Policy Manager: Editing a Policy
+
+Set break points (derivative widths)
+Modify based on query params
+
+### Image and Video Manager - Compression
+
+Structural similarity algorithm
+
+1. Quality Level
+
+- Normalized quality setting across all image supported formats
+
+2. Perceptual Quality
+
+### Perceptual Quality Compression
+
+Uses the Structural Similarity Algo to overlay a heat map and understand compression
