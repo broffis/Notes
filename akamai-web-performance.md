@@ -265,3 +265,206 @@ Header Names
 
 - Variables allow for additional controls
 - Create your own or use predefined ones
+
+# Day 2: 9-10-2025
+
+## Module 5: Refreshing Content
+
+### Content Refresh Tools
+
+- Fast and Advanced Purge
+  - Avoid advanced unless absolutely necessary
+    Fast Purge
+- REST API support
+- Production and staging
+- <5 seconds (purge by URL)
+- ~4 min (purge by CP Code)
+  Advanced Purge
+- SOAP API support
+- 30-40 minutes
+
+### Content Refresh - {OPEN} APIs
+
+### Pragma Headers
+
+[headers available](https://techdocs.akamai.com/edge-diagnostics/docs/pragma-headers)
+
+### Key Takeaways
+
+## Module 6: HTTP/3 and Adaptive Acceleration
+
+End user to edge server
+
+### HTTP/3 in a Nutshell
+
+- QUIC integrates TLS v1.3
+- Encryption moves from application layer to transport layer
+- Quicker Connection setup
+- Builds on top of HTTP/2
+
+You can have 2 & 3 enabled. The browser will request what it is capable of handling
+
+### Adaptive Acceleration - Push & Preconnect
+
+- Requires HTTP/2 enabled
+  Steps
+
+1. Client requests content. JS injected (origin/edge) to provide mPulse data
+2. JS code injects data in beasons to edge server for offline analysis
+3. Based on analysis, edge server is able to push resources or give preconnect info
+
+### Brotli Support from Origin
+
+Akamai can return Brotli-compressed assets from your origin and cache them on edge servers
+Akamai will only request Brotli compressed content form the origin if client request also had "Accept Encoding: br, gzip"
+
+### Key Takeaways
+
+- Enabling H/# is easy
+- H/3
+  - Better security
+
+## Module 7: Analytics
+
+### User Insights
+
+- mPulse - Real User Monitoring
+- Akamai control center reports
+- ~Log delivery service~ and DataStream
+
+### Navigation Timing Interface
+
+mPulse
+
+- Navigation Timing (JS API) for measuring performance on the web
+
+### Navigation Timing Interface: Processing Model
+
+this is all about the timing points and how they relate to request/response events
+
+### Perceived Performance
+
+### RUM vs Synthetic Testing
+
+1. RUM
+
+- Passive
+- Collect data from every user, on every browser
+
+2. Synthetic
+
+- Active
+- Simulated health check in controlled env
+
+### What can RUM or Synthetic tell you
+
+            RUM             |       Synth
+
+- Uncovers real insights | Test diff locations, browsers
+- Identify pain points |
+- Measure performance
+
+### When to use RUM vs Synth
+
+### How mPulse Works
+
+1. User requests and mPulse-enabled page
+2. Edge server injects boomerang JS library to collect web performance data
+3. mPulse collects data and sends a beacon to the portal
+4. Edge server receives beacon and generates download receipt
+
+### mPulse Data
+
+Metric Data
+
+- DNS
+- TCP
+- First byte
+- Base page download time
+- First paint
+- DOM content loaded
+- DOM complete
+- on-load event
+
+Demographic Data
+
+- Browser
+- OS
+- Network type and speed
+
+Perceived Data
+
+- Time to visual ready
+- TTI
+- TTFI
+- Interactions
+- Delayed interactions
+- Rage clicks
+
+### mPulse Features
+
+- Real data, real time, all the time
+- Full SPA support
+- Correlation and analysis
+- Patented "What-if" feature
+  - Establish "money-routes" and find ways to tweak it for better conversion
+- Most matter pages identification
+- Third-party resources mastering
+
+### mPulse JS Loader
+
+Akamai Edge-Injected mPulse
+
+- Updates from Akamai automatically added on release
+
+Origin-Injected mPulse
+
+### Akamai Control Center - User Traffic Report
+
+### Akamai Control Center - Unique Visitors Report
+
+### Akamai Control Center - Traffic Report
+
+### Akamai Control Center - Responses Report
+
+### DataStream
+
+Where you can send data to third parties (like DataDog)
+
+Data set params
+
+- Can add custom fields
+
+Available Data
+
+- Log Info
+- Message exchange data
+- Request headers
+- Network performance data
+- Geo data
+- Cache data
+
+### Key Takeaways
+
+## Module 8: Diagnostic Tools
+
+This would be really helpful for internal issues
+
+- Send a link to a rep if they're having performance issues
+
+Hamburger Menu -> Edge Diagnostics
+
+You can use reference codes to figure out what happened
+Get error string # from user and "translate error string"
+
+Reference codes
+
+- 18: Request was blocked
+
+User diagnostic data
+
+- Create a link to give to someone who may be experiencing an issue
+  - Helpful for finding out why someone might be struggling with requests/navigation
+- Take a url from an end user and generate the diagnostic link
+
+### Key Takeaways
