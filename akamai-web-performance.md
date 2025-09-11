@@ -274,12 +274,16 @@ Header Names
 
 - Fast and Advanced Purge
   - Avoid advanced unless absolutely necessary
-    Fast Purge
+
+Fast Purge
+
 - REST API support
 - Production and staging
 - <5 seconds (purge by URL)
 - ~4 min (purge by CP Code)
-  Advanced Purge
+
+Advanced Purge
+
 - SOAP API support
 - 30-40 minutes
 
@@ -687,3 +691,130 @@ Structural similarity algorithm
 ### Perceptual Quality Compression
 
 Uses the Structural Similarity Algo to overlay a heat map and understand compression
+
+# Day 3: 9-11-2025
+
+## Module 9: Image and Video Optimization (cont'd)
+
+### Configuration - Policy Manager: Transformations
+
+Transformation
+
+- Chained: can use multiple transforms
+- Parameters: exposed as variables
+
+Variables
+
+- Can be referenced from policies and used as query string params
+- Must have default value
+
+### Configuration - Policy Manager: Video
+
+Video Quality: Low, Medium Low, Medium, Medium High, High
+Video Resolution
+
+### Key Takeaways
+
+Could we test cloudinary v akamai for performance on images?
+Are images hosted via wordpress?
+
+## Module 11: Cloudlets
+
+What is cloudlets?
+How are they integrated?
+
+### Cloudlets: Introduction
+
+A value-added application, designed to solve specific business challenges
+
+### Cloudlets Policy Manager
+
+Cloudlets are self-provisioned and self-configured via Cloudlet Policy Manager
+Can manage via {OPEN} APIs
+Safely extend control to other teams (IT, Marketing, Operations)
+
+### Cloudlets Portfolio
+
+Application Load Balancer
+Edge Redirector
+Phased Release
+**Visitor Prioritization** (This could be helpful to prioritize associates)
+
+- This has been replaced with something else (Queue it?)
+- Sounds like it's more about creating waiting rooms than moving requests up in line
+
+API Prioritization
+Audience Segmentation
+Forward Rewrite
+Request Control
+
+### How Edge Redirector Works
+
+### Edge Redirector Configuration
+
+We're already doing this with other tools
+Doesn't seem particularly useful
+
+### Edge Redirector - Simple Rule
+
+### Why Edge Redirector Cloudlet
+
+You can have multiple rules
+You can use other built in tools with it
+
+### Request Control Cloudlet
+
+Offload unqualified traffic from your origin and provide conditional visitor access by controlling which requests your site responds to
+
+Use cases:
+
+- e-commerce sites with regional online sales
+- website maintenance, QA testing
+- blocking users who post unwanted comments
+- denying traffic from low-priority geographies
+- denying traffic from high fraud risk geographies
+
+### How Request Control Works: Block List
+
+### Design Policies with Flexible Match Conditions
+
+### Request Control Configuration - Policy Rule
+
+Can use a list of IPs to block
+Can have a branded page that shows after denial
+
+### Configuring Cloudlets Origins
+
+### Key Takeaways
+
+## Module 12: Introduction to Akamai for DevOps
+
+### Akamai APIs
+
+[APIs include](https://techdocs.akamai.com/home/page/apis#)
+
+- Fast Purge
+- Property Manager
+- Image and Video Manager
+- Cloudlets
+
+API Authentication
+
+1. Create an API Client for a portal
+
+- API Client - a derivative of user connected portal
+
+2. Each API Client can contain one or more credentials
+
+[SDKs](https://www.github.com/akamai)
+
+### Akamai APIs - HTTPie
+
+- Great way to get started with APIs
+
+### HTTPie - Fast Purge
+
+### Akamai CLI
+
+Open Source (in github)
+Available via Homebrew
